@@ -102,7 +102,3 @@ project-root/
 - **Improved Ranking**: Integrating advanced ranking algorithms to better organize results from all content sources.
 - **Real-time Filters**: Enhancing the filter system to dynamically update results as filters are changed without reloading the page.
 - **Advanced Search**: Add options for sorting by date, popularity, or source-specific parameters such as citation count (for academic papers).
-
-## License
-
-This project is licensed under the MIT License.
