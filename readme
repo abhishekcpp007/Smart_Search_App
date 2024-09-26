@@ -1,0 +1,108 @@
+# Smart Search Function - POC Project
+
+This project is a **Proof of Concept (POC)** for a search function that integrates various content sources, including **YouTube videos**, **articles**, **blogs**, and **academic papers**. The search results are filtered based on user selection and ranked by their relevance to the search query. The project uses Node.js for the backend and a simple HTML/JavaScript frontend.
+
+## Features
+
+- **YouTube API integration**: Fetches YouTube videos based on a search query.
+- **Blog, Article, and Academic Paper Results**: Simulated placeholders for blog, article, and academic paper search results.
+- **Filter System**: Users can select filters (YouTube, Blogs, Articles, Academic Papers) to refine their search results.
+- **Responsive Design**: Frontend built with HTML, CSS, and JavaScript.
+
+## Technologies Used
+
+- **Node.js**: Server-side JavaScript environment.
+- **Express.js**: Web framework for building the API.
+- **Axios**: Used for making HTTP requests to third-party APIs.
+- **YouTube Data API**: Used to fetch YouTube videos.
+- **HTML/CSS/JavaScript**: Frontend technologies for UI and user interactions.
+
+## Project Structure
+
+```
+project-root/
+│
+├── server.js          # Node.js server file
+├── public/            # Public directory for frontend files
+│   ├── index.html     # Frontend HTML file
+│   ├── script.js      # Frontend JavaScript for search functionality
+│   ├── styles.css     # Frontend CSS for styling
+├── package.json       # Node dependencies and scripts
+└── README.md          # Project documentation
+```
+
+## Setup Instructions
+
+### Prerequisites
+- **Node.js** (Ensure Node.js is installed)
+- **YouTube Data API Key** (You'll need a valid API key from Google Developers Console)
+
+### Steps to Run the Project
+
+1. **Clone the Repository**:
+   ```bash
+   git clone <repository-url>
+   cd project-root
+   ```
+
+2. **Install Node.js dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Configure the YouTube API Key**:
+   - Open the `server.js` file.
+   - Replace the `YOUTUBE_API_KEY` variable with your own YouTube Data API key.
+   ```javascript
+   const YOUTUBE_API_KEY = 'YOUR_YOUTUBE_API_KEY';
+   ```
+
+4. **Start the Server**:
+   ```bash
+   node server.js
+   ```
+   The server will start on **port 3000**. Visit `http://localhost:3000` in your browser.
+
+5. **Perform a Search**:
+   - Enter a search term in the search box on the webpage.
+   - Select the filters (YouTube, Blogs, Articles, Academic Papers).
+   - Click the "Search" button to see the results.
+
+## API Routes
+
+1. **YouTube Search Route**:  
+   Endpoint: `/api/search/youtube?q=<searchQuery>`  
+   Fetches YouTube videos based on the search query using the YouTube Data API.
+
+2. **Blogs Search Route**:  
+   Endpoint: `/api/search/blogs?q=<searchQuery>`  
+   Returns simulated blog search results.
+
+3. **Articles Search Route**:  
+   Endpoint: `/api/search/articles?q=<searchQuery>`  
+   Returns simulated article search results.
+
+4. **Academic Papers Search Route**:  
+   Endpoint: `/api/search/academic?q=<searchQuery>`  
+   Returns simulated academic paper search results.
+
+## Enhancements for the POC
+
+- **Ranking Logic**: For YouTube, the API provides popular results based on views and relevance. For other content sources, a more complex ranking logic can be implemented using additional APIs or ranking algorithms.
+- **Additional APIs**: For blog, article, and academic paper searches, APIs such as **Google Custom Search**, **Bing Search API**, or **Google Scholar API** can be integrated.
+- **Pagination**: Implement pagination for handling larger sets of search results.
+
+## Challenges Faced
+
+- **API Limitations**: Working with the YouTube Data API requires managing request quotas. This was handled by using filters to limit the number of results fetched.
+- **Simulated Data for Other Content**: Since no actual APIs were used for blogs, articles, and academic papers, placeholders were implemented. In a real-world scenario, additional APIs should be integrated for these content sources.
+
+## Future Enhancements
+
+- **Improved Ranking**: Integrating advanced ranking algorithms to better organize results from all content sources.
+- **Real-time Filters**: Enhancing the filter system to dynamically update results as filters are changed without reloading the page.
+- **Advanced Search**: Add options for sorting by date, popularity, or source-specific parameters such as citation count (for academic papers).
+
+## License
+
+This project is licensed under the MIT License.
